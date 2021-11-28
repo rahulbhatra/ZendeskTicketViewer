@@ -1,0 +1,20 @@
+curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/tickets/create_many.json \
+  -d @tickets.json \
+  -H "Content-Type: application/json" -v -u rsharma11@hawk.iit.edu:Innovation@9275 -X POST
+
+curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/users.json \
+  -u rsharma11@hawk.iit.edu:Innovation@9275
+
+curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/tickets.json \
+-v -u rsharma11@hawk.iit.edu:Innovation@9275
+
+curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/tickets/create_many.json \
+  -d '{"tickets": [{"subject": "My printer is on fire!", "comment": { "body": "The smoke is very colorful." }}, {"subject": "Help!", "comment": { "body": "Help I need somebody." }}]}' \
+  -H "Content-Type: application/json" -v -u rsharma11@hawk.iit.edu:Innovation@9275 -X POST
+
+curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/users/1267071613089 \
+   -H "Content-Type: application/json" -v -u rsharma11@hawk.iit.edu:Innovation@9275
+
+
+curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/groups/1900005000204.json \
+  -v -u rsharma11@hawk.iit.edu:Innovation@9275

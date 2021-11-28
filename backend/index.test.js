@@ -1,13 +1,6 @@
-test('two plus two is four', () => {
-    expect(2 + 2).toBe(4);
-  })
+const { getAllTickets } = require('./ticket');
 
-
-test('null', () => {
-let n = null;
-expect(n).toBeNull();
-expect(n).toBeDefined();
-expect(n).not.toBeUndefined();
-expect(n).not.toBeTruthy();
-expect(n).toBeFalsy();
+test('check-zendesk-api/v2/tickets.json', async() => {
+  var response = await getAllTickets();
+  expect(response.length).toBe(100);
 });
