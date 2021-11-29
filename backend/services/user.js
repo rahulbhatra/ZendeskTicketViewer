@@ -1,15 +1,7 @@
 const axios = require('axios');
 const qs = require('qs');
 
-const getTicketUserDetails = async (tickets) => {
-    var userIds = new Set();
-    for(var i = 0; i < tickets.length; i ++) {
-      userIds.add(tickets[i].submitter_id);
-      userIds.add(tickets[i].assignee_id);
-      userIds.add(tickets[i].requester_id);
-    }
-  
-    var OAuthToken = "ff1ed2f056d958d6a8d494baf7e17fc2ef5066c2c274bf82933a643480c041f7"
+const getUserDetails = async (userIds, OAuthToken) => {
     var authorization = "Bearer " + OAuthToken;
     var url = `https://zendeskcodingchallenge8775.zendesk.com/api/v2/users/show_many`;
     const params = {
@@ -54,7 +46,7 @@ const insertUserDetailsInTickets = (userIdUserMap, tickets) => {
 }
 
 module.exports = {
-    getTicketUserDetails,
+    getUserDetails,
     createUserIdUserMap,
     insertUserDetailsInTickets
 }
