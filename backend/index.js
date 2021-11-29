@@ -12,10 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger('dev'));
 
-// apiToken = "7oXxihqNqTEoXIXkGK2wcCzOj5gflc8HcgJWs1Ce";
-// curl https://zendeskcodingchallenge8775.zendesk.com/api/v2/tickets.json?per_page=25 \
-//   -H "Authorization: Bearer ff1ed2f056d958d6a8d494baf7e17fc2ef5066c2c274bf82933a643480c041f7"
-
 const OAuthToken = "ff1ed2f056d958d6a8d494baf7e17fc2ef5066c2c274bf82933a643480c041f7";
 
 app.post('/api/tickets', async function(req, res){
